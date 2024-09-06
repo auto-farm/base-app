@@ -1,0 +1,32 @@
+{
+  "name": "@dashboard/renderer",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "clean": "rm -rf ./dist",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@dashboard/common": "workspace:*",
+    "axios": "1.7.7",
+    "i18next": "23.15.1",
+    "lodash": "4.17.21",
+    "numbro": "2.5.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-i18next": "15.0.2",
+    "react-router-dom": "6.26.2"
+  },
+  "devDependencies": {
+    "@svgr/rollup": "8.1.0",
+    "@types/lodash": "4.17.7",
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "4.3.1",
+    "typescript": "^5",
+    "vite": "^5"
+  }
+}

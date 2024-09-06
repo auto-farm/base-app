@@ -1,0 +1,27 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "cache": false,
+      "dependsOn": ["^build"],
+      "outputs": ["./dist/**"]
+    },
+    "@dashboard/main#build": {
+      "cache": false,
+      "dependsOn": ["@dashboard/common#build", "@dashboard/renderer#build"]
+    },
+    "@dashboard/renderer#build": {
+      "cache": false,
+      "dependsOn": ["@dashboard/common#build"]
+    },
+    "clean": {
+      "cache": false,
+      "dependsOn": ["^clean"]
+    },
+    "dev": {
+      "dependsOn": ["^dev"],
+      "persistent": true
+    }
+  },
+  "globalEnv": ["DISPLAY", "NODE_ENV"]
+}

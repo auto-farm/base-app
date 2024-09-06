@@ -1,0 +1,70 @@
+{
+  "name": "@dashboard/main",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.ts --configPlugin typescript",
+    "clean": "rm -rf ./dist",
+    "dev": "npm run build && electron ./dist/index.js",
+    "release": "electron-builder -w"
+  },
+  "dependencies": {
+    "@dashboard/common": "workspace:*",
+    "axios": "1.7.7",
+    "electron-log": "5.2.0",
+    "electron-updater": "6.3.4",
+    "lodash": "4.17.21"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "26.0.1",
+    "@rollup/plugin-json": "6.1.0",
+    "@rollup/plugin-node-resolve": "15.2.4",
+    "@rollup/plugin-replace": "5.0.7",
+    "@rollup/plugin-terser": "0.4.4",
+    "@rollup/plugin-typescript": "12.1.0",
+    "@types/lodash": "4.17.7",
+    "@types/node": "^22",
+    "electron": "32.1.2",
+    "electron-builder": "25.0.5",
+    "rollup": "4.22.4",
+    "typescript": "^5"
+  },
+  "build": {
+    "asar": false,
+    "appId": "com.hrs.dashboard",
+    "productName": "Dashboard",
+    "copyright": "Copyright © 2024 HRS",
+    "extraMetadata": {
+      "name": "Dashboard",
+      "description": "Dashboard App"
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["arm64"]
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "directories": {
+      "output": "out"
+    },
+    "files": ["dist/**/*", "!**/node_modules/@dashboard/**"],
+    "extraFiles": [
+      {
+        "from": "./resources",
+        "to": "Resources/app/resources",
+        "filter": "**/*"
+      }
+    ]
+  }
+}

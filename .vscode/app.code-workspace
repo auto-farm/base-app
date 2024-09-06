@@ -1,0 +1,42 @@
+{
+  "folders": [
+    {
+      "name": "packages/common",
+      "path": "../packages/common"
+    },
+    {
+      "name": "packages/main",
+      "path": "../packages/main"
+    },
+    {
+      "name": "packages/renderer",
+      "path": "../packages/renderer"
+    },
+    {
+      "name": "ROOT",
+      "path": "../"
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "quickfix.biome": "explicit",
+      "source.fixAll": "explicit",
+      "source.organizeImports.biome": "explicit"
+    },
+    "eslint.enable": false,
+    "prettier.enable": false,
+    "[json]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[javascript]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescript]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "biomejs.biome"
+    }
+  }
+}

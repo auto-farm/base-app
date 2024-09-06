@@ -1,0 +1,25 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": ">=pnpm@9.0.0",
+  "scripts": {
+    "clean": "turbo run clean",
+    "bump": "ts-node ./src/bump.ts",
+    "commit": "ts-node ./src/commit.ts",
+    "dev": "dotenv -e .env.dev -- turbo run dev",
+    "build": "dotenv -e .env.prod -- turbo run build",
+    "dist": "ts-node ./src/compile.ts && ts-node ./src/copy.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@biomejs/biome": "^1",
+    "@types/node": "^22",
+    "dotenv-cli": "7.4.2",
+    "semver": "7.6.3",
+    "turbo": "^2",
+    "ts-node": "10.9.2",
+    "typescript": "^5",
+    "yargs": "17.7.2"
+  }
+}
